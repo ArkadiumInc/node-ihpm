@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+
+var log = require('verbalize');
+var argv = require('minimist')(process.argv.slice(2));
+var tasks = require('../tasks');
+
+/**
+ * Choose a task
+ */
+
+// Verbalize `runner`
+log.runner = 'ihpm';
+
+// Use `-t` or `--task` to specify the task to perform
+var task = argv._[0] || argv.f || argv.file;
+
+if (!task || Object.keys(tasks.tasks).indexOf(task) === -1) {
+  log.error('No tasks will be executed since you didn\'t specify anything.' + "\nPossible tasks: " + log.bold(Object.keys(tasks.tasks).join(', ')));
+  return;
+}
+
+
+/**
+ * Perform a task
+ */
+
+var taskFunc = tasks.tasks[task];
+
+taskFunc();
+
+/*
+fs.appendFile(file, ('- [ ] ' + task + '\n'), function (err) {
+  if (err) {throw err;}
+
+  log.writeln();
+  log.writeln(log.gray('  todo [appended] ') + '\'' + task + '\' to ' + log.bold(file));
+
+  // If all is well, log a success message.
+  log.success('  ' + log.runner + ' [done]');
+});
+*/
