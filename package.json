@@ -36,10 +36,12 @@
     "test": "mocha -R test"
   },
   "dependencies": {
+    "inhabit-modules-tests": "^1.0.1",
     "minimist": "~0.0.8",
     "verbalize": "~0.1.1"
   },
   "devDependencies": {
+    "inhabit-modules-tests": "^1.0.1",
     "jaguarjs-jsdoc-patched-2": "0.0.3",
     "verb": "~0.2.0"
   }
