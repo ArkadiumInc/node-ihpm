@@ -33,7 +33,8 @@
     "node": ">=0.8"
   },
   "scripts": {
-    "test": "mocha -R test"
+    "test": "mocha -R test",
+    "docs": "verb"
   },
   "dependencies": {
     "inhabit-modules-tests": "^1.0.1",
@@ -41,8 +42,7 @@
     "verbalize": "~0.1.1"
   },
   "devDependencies": {
-    "inhabit-modules-tests": "^1.0.1",
-    "jaguarjs-jsdoc-patched-2": "0.0.3",
-    "verb": "~0.2.0"
+    "inhabit-modules-tests": "^1.0.2",
+    "jaguarjs-jsdoc-patched-2": "0.0.3"
   }
 }
