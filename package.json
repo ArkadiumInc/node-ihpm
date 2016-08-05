@@ -2,17 +2,17 @@
   "name": "ihpm",
   "description": "InHabit Package Manager",
   "version": "0.1.3",
-  "homepage": "https://github.com/rand0me/ihpm",
+  "homepage": "https://github.com/rand0me/node-ihpm",
   "author": {
     "name": "rand0me",
     "url": "https://rand0me.github.io"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/rand0me/ihpm.git"
+    "url": "git://github.com/rand0me/node-ihpm.git"
   },
   "bugs": {
-    "url": "https://github.com/rand0me/ihpm/issues"
+    "url": "https://github.com/rand0me/node-ihpm/issues"
   },
   "licenses": [
     {
@@ -33,16 +33,14 @@
     "node": ">=0.8"
   },
   "scripts": {
-    "test": "mocha -R test",
+    "test": "tape",
     "docs": "verb"
   },
   "dependencies": {
-    "inhabit-modules-tests": "^1.0.1",
+    "inhabit-modules-tests": "^1.2.0",
     "minimist": "~0.0.8",
+    "pinkie-promise": "^2.0.1",
     "verbalize": "~0.1.1"
   },
-  "devDependencies": {
-    "inhabit-modules-tests": "^1.0.2",
-    "jaguarjs-jsdoc-patched-2": "0.0.3"
-  }
+  "devDependencies": {}
 }

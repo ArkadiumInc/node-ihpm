@@ -1,7 +1,7 @@
-var log = require('verbalize');
+const tests = require('inhabit-modules-tests'),
+    dir = process.cwd();
 
-module.exports = function test() {
-    var tests = require('inhabit-modules-tests');
-    log.writeln(log.gray('  - test'));
-    tests.start();
+
+module.exports = function () {
+    tests(dir);
 };
