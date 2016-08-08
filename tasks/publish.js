@@ -21,7 +21,8 @@ module.exports = function publish() {
     output.on('close', onZipClose.bind(archive));
 
     archive
-        .append(fs.createReadStream(path.resolve(module)), { name: path.basename(module) })
+        .append(fs.createReadStream(path.resolve(getModule())), { name: getModule() })
+        .append(fs.createReadStream(path.resolve(locator.getCfg())), { name: 'inhabitcfg.json' })
         .finalize();
 };
 
