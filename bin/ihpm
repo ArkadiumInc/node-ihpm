@@ -27,15 +27,3 @@ if (!task || Object.keys(tasks.tasks).indexOf(task) === -1) {
 var taskFunc = tasks.tasks[task];
 
 taskFunc();
-
-/*
-fs.appendFile(file, ('- [ ] ' + task + '\n'), function (err) {
-  if (err) {throw err;}
-
-  log.writeln();
-  log.writeln(log.gray('  todo [appended] ') + '\'' + task + '\' to ' + log.bold(file));
-
-  // If all is well, log a success message.
-  log.success('  ' + log.runner + ' [done]');
-});
-*/
