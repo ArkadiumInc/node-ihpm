@@ -37,7 +37,7 @@
     "docs": "verb"
   },
   "dependencies": {
-    "inhabit-modules-tests": "^1.2.1",
+    "inhabit-modules-tests": "^1.2.3",
     "minimist": "~0.0.8",
     "pinkie-promise": "^2.0.1",
     "verbalize": "~0.1.1"
