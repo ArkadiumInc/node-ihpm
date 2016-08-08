@@ -1,7 +1,7 @@
 {
   "name": "ihpm",
   "description": "InHabit Package Manager",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "homepage": "https://github.com/rand0me/node-ihpm",
   "author": {
     "name": "rand0me",
