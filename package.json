@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "archiver": "^1.0.1",
-    "inhabit-modules-tests": "^1.2.3",
+    "inhabit-modules-tests": "^1.2.4",
     "minimist": "~0.0.8",
     "pinkie-promise": "^2.0.1",
     "request": "^2.74.0",
