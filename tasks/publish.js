@@ -1,3 +1,5 @@
+'use strict';
+
 const test = require('./test');
 const log = require('verbalize');
 const fs = require('fs');

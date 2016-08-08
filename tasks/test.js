@@ -1,3 +1,5 @@
+'use strict';
+
 const tests = require('inhabit-modules-tests'),
     dir = process.cwd();
 
