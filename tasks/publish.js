@@ -44,7 +44,7 @@ function onRequestDone(err, res, body) {
     if (err) {
         throw err;
     }
-    if (res.statusCode === 200) {
+    if (res.statusCode === 200 || res.statusCode === 201) {
         log.writeln(log.green('Published application: ' + log.bold(getModuleName())));
     } else {
         log.writeln(log.red('Error: ' + log.bold(res.statusCode)));
