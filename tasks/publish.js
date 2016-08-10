@@ -31,7 +31,7 @@ module.exports = function publish() {
 function onZipClose() {
     log.writeln("\n" + log.green(log.bold(this.pointer()) + ' total bytes in ' + log.bold(getZipPath())));
 
-    var form = request.post('http://inhabit-apps-service.azurewebsites.net/apps/upload', onRequestDone).form();
+    var form = request.post(getUploadUrl(), onRequestDone).form();
     form.append('UploadedImage', fs.createReadStream(getZipPath()), {filename: path.basename(getZipPath())});
     form.append('appname', getModuleName());
 }
@@ -59,4 +59,22 @@ function getModule() {
 
 function getModuleName() {
     return path.basename(getModule(), '.js');
+}
+
+function getUploadUrl(){
+    var urlLive = 'http://inhabit-apps-service.azurewebsites.net/apps/upload';
+    var urlDev = 'http://inhabit-apps-service-dev.azurewebsites.net/apps/upload';
+
+    var appUploadTarget = process.env.AppUploadTarget;
+
+    if (appUploadTarget){
+        if (appUploadTarget.toUpperCase() == "DEV"){
+            return urlDev;
+        }
+        if (appUploadTarget.toUpperCase() == "LIVE"){
+            return urlLive;
+        }
+        throw 'Invalid environment variable AppUploadTarget. Possible values are: "dev" or "live".';
+    }
+    return urlLive;
 }
