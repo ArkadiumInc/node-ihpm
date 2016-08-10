@@ -31,7 +31,10 @@ module.exports = function publish() {
 function onZipClose() {
     log.writeln("\n" + log.green(log.bold(this.pointer()) + ' total bytes in ' + log.bold(getZipPath())));
 
-    var form = request.post(getUploadUrl(), onRequestDone).form();
+    var uploadUrl = getUploadUrl();
+    log.writeln("\nSelected upload Url:" + log.bold(uploadUrl));
+
+    var form = request.post(uploadUrl, onRequestDone).form();
     form.append('UploadedImage', fs.createReadStream(getZipPath()), {filename: path.basename(getZipPath())});
     form.append('appname', getModuleName());
 }
