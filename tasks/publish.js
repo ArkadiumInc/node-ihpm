@@ -7,34 +7,38 @@ const path = require('path');
 const request = require('request');
 const archiver = require('archiver');
 const locator = require('../lib/locator');
+const config = require('../configuration');
+const Readable = require('stream').Readable;
 
-module.exports = function publish() {
-    test();
+module.exports = function () {
+    test().then(publish);
+};
 
+function publish() {
     log.writeln();
-    log.writeln(log.gray('  - publish'));
+    log.writeln(log.gray(`  - publish (${config.env})`));
 
     const output = fs.createWriteStream(getZipPath());
     const archive = archiver('zip');
-    const module  = getModule();
 
-    archive.on('error', function(err) { throw err; });
+    archive.on('error', function (err) {
+        throw err;
+    });
     archive.pipe(output);
     output.on('close', onZipClose.bind(archive));
 
     archive
-        .append(fs.createReadStream(path.resolve(getModule())), { name: getModule() })
-        .append(fs.createReadStream(path.resolve(locator.getCfg())), { name: 'inhabitcfg.json' })
+        .append(getModuleStream(), {name: getModule()})
+        .append(fs.createReadStream(path.resolve(locator.getCfg())), {name: 'inhabitcfg.json'})
         .finalize();
-};
+}
 
 function onZipClose() {
     log.writeln("\n" + log.green(log.bold(this.pointer()) + ' total bytes in ' + log.bold(getZipPath())));
 
-    var uploadUrl = getUploadUrl();
-    log.writeln("\nSelected upload Url:" + log.bold(uploadUrl));
+    log.writeln(log.yellow("\nPublishing App To: " + log.bold(config.endpoint)));
 
-    var form = request.post(uploadUrl, onRequestDone).form();
+    const form = request.post(config.endpoint, onRequestDone).form();
     form.append('UploadedImage', fs.createReadStream(getZipPath()), {filename: path.basename(getZipPath())});
     form.append('appname', getModuleName());
 }
@@ -64,20 +68,19 @@ function getModuleName() {
     return path.basename(getModule(), '.js');
 }
 
-function getUploadUrl(){
-    var urlLive = 'http://inhabit-apps-service.azurewebsites.net/apps/upload';
-    var urlDev = 'http://inhabit-apps-service-dev.azurewebsites.net/apps/upload';
+function getModuleStream() {
+    if (config.debug) {
+        return fs.createReadStream(path.resolve(getModule()));
+    } else {
+        const outputStream = new Readable();
 
-    var appUploadTarget = process.env.AppUploadTarget;
+        setImmediate(function () {
+            const UglifyJS = require('uglify-js');
+            const code = UglifyJS.minify(getModule()).code;
+            outputStream.push(code);
+            outputStream.push(null);
+        });
 
-    if (appUploadTarget){
-        if (appUploadTarget.toUpperCase() == "DEV"){
-            return urlDev;
-        }
-        if (appUploadTarget.toUpperCase() == "LIVE"){
-            return urlLive;
-        }
-        throw 'Invalid environment variable AppUploadTarget. Possible values are: "dev" or "live".';
+        return outputStream;
     }
-    return urlLive;
 }

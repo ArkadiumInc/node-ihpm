@@ -5,5 +5,5 @@ const tests = require('inhabit-modules-tests'),
 
 
 module.exports = function () {
-    tests(dir);
+    return tests(dir);
 };
