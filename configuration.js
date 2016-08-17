@@ -1,4 +1,4 @@
-var ENV = process.env ? process.env.AppUploadTarget : 'DEV';
+var ENV = process.env && process.env.AppUploadTarget ? process.env.AppUploadTarget.toUpperCase() : 'DEV';
 
 var ENVIRONMENTS = {
     DEV: {
