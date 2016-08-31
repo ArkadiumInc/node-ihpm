@@ -1,0 +1,3 @@
+[submodule "templates/javascript"]
+	path = templates/javascript
+	url = git@github.com:rand0me/inhabit-module-test-module.git
