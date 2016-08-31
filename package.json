@@ -14,12 +14,7 @@
   "bugs": {
     "url": "https://github.com/rand0me/node-ihpm/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/rand0me/ihpm/blob/master/LICENSE-MIT"
-    }
-  ],
+  "license": "SEE LICENSE IN README.md",
   "keywords": [
     "cli",
     "command line"
@@ -38,6 +33,10 @@
   },
   "dependencies": {
     "archiver": "^1.0.1",
+    "gulp": "^3.9.1",
+    "gulp-debug": "^2.1.2",
+    "gulp-regex-rename": "^0.1.0",
+    "gulp-replace": "^0.5.4",
     "inhabit-modules-tests": "^1.3.1",
     "minimist": "~0.0.8",
     "pinkie-promise": "^2.0.1",

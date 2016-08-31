@@ -84,3 +84,8 @@ function getModuleStream() {
         return outputStream;
     }
 }
+
+module.exports.help =
+`
+Publish module to InHabit Apps Service
+`
