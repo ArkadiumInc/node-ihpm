@@ -8,8 +8,13 @@ const grename = require('gulp-regex-rename');
 const gdebug = require('gulp-debug');
 const path = require('path');
 
+const templatesBase = path.join(__dirname, '../templates/');
+
 const templates = {
-  javascript: path.join(__dirname, '../templates/javascript/**/*')
+  javascript: [
+    templatesBase + 'javascript/**/*',
+    '!' + templatesBase + 'javascript/.git'
+  ]
 };
 
 module.exports = function init() {
@@ -27,7 +32,7 @@ module.exports = function init() {
 
     log.writeln("Using template: " + log.bold(templates.javascript));
 
-    gulp.src(templates.javascript)
+    gulp.src(templates.javascript, { dot: true })
       .pipe(greplace(/test-module/g, name))
       .pipe(greplace(/TestModule/g, camelName))
       .pipe(grename(/TestModule/, camelName))
