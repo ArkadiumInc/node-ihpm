@@ -29,8 +29,14 @@ function publish() {
 
     archive
         .append(getModuleStream(), {name: getModule()})
-        .append(fs.createReadStream(path.resolve(locator.getCfg())), {name: 'inhabitcfg.json'})
-        .finalize();
+        .append(fs.createReadStream(path.resolve(locator.getCfg())), {name: 'inhabitcfg.json'});
+
+    var previewPath = getPreview();
+    if (previewPath) {
+        archive
+            .append(fs.createReadStream(path.resolve(previewPath)), {name: previewPath})
+    }
+    archive.finalize();
 }
 
 function onZipClose() {
@@ -62,6 +68,9 @@ function getZipPath() {
 
 function getModule() {
     return require(path.resolve(locator.getCfg())).main;
+}
+function getPreview() {
+    return require(path.resolve(locator.getCfg())).preview;
 }
 
 function getModuleName() {
