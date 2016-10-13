@@ -9,15 +9,13 @@ const gdebug = require('gulp-debug');
 const path = require('path');
 const message = require('../lib/message');
 
-const JAVASCRIPT_TEMPLATE = '../node_modules/inhabit-module-test-module'
+const JAVASCRIPT_TEMPLATE = path.resolve('node_modules/inhabit-module-test-module');
+console.log(JAVASCRIPT_TEMPLATE);
 
 const templatesBase = path.join(__dirname, '../templates/');
 
 const templates = {
-  javascript: [
-    templatesBase + 'javascript/**/*',
-    '!' + templatesBase + 'javascript/.git'
-  ]
+  javascript: `${JAVASCRIPT_TEMPLATE}/**/*`
 };
 
 module.exports = function init() {
