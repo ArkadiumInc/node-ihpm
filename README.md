@@ -6,7 +6,13 @@
 $ (sudo) npm install -g ihpm
 $ ihpm test
 $ ihpm publish
+$ ihpm init kittens
 ```
+
+## API
+
+### ihpm test
+That command runs inhabit api tests against current working directory
 
 ## License
 
