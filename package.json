@@ -37,6 +37,7 @@
     "gulp-debug": "^2.1.2",
     "gulp-regex-rename": "^0.1.0",
     "gulp-replace": "^0.5.4",
+    "inhabit-module-test-module": "^0.1.0",
     "inhabit-modules-tests": "1",
     "minimist": "~0.0.8",
     "pinkie-promise": "^2.0.1",

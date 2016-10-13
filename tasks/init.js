@@ -9,6 +9,8 @@ const gdebug = require('gulp-debug');
 const path = require('path');
 const message = require('../lib/message');
 
+const JAVASCRIPT_TEMPLATE = '../node_modules/inhabit-module-test-module'
+
 const templatesBase = path.join(__dirname, '../templates/');
 
 const templates = {
