@@ -11,7 +11,7 @@ const config = require('../configuration');
 const Readable = require('stream').Readable;
 
 module.exports = function () {
-    test().then(publish);
+    return publish();
 };
 
 function publish() {
