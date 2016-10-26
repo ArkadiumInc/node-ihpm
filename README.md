@@ -16,7 +16,7 @@ That command runs inhabit api tests against current working directory
 
 ## License
 
-Copyright (c) 2016 rand0me, contributors.
+Copyright (c) 2016 ArkadiumInc, contributors.
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation

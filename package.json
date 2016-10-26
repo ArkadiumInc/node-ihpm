@@ -2,17 +2,17 @@
   "name": "ihpm",
   "description": "InHabit Package Manager",
   "version": "0.5.3",
-  "homepage": "https://github.com/rand0me/node-ihpm",
+  "homepage": "https://github.com/ArkadiumInc/node-ihpm",
   "author": {
-    "name": "rand0me",
-    "url": "https://rand0me.github.io"
+    "name": "ArkadiumInc",
+    "url": "https://ArkadiumInc.github.io"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/rand0me/node-ihpm.git"
+    "url": "git://github.com/ArkadiumInc/node-ihpm.git"
   },
   "bugs": {
-    "url": "https://github.com/rand0me/node-ihpm/issues"
+    "url": "https://github.com/ArkadiumInc/node-ihpm/issues"
   },
   "license": "SEE LICENSE IN README.md",
   "keywords": [
