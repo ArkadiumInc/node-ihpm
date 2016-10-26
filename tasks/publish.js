@@ -36,6 +36,7 @@ function publish() {
         archive
             .append(fs.createReadStream(path.resolve(previewPath)), {name: previewPath})
     }
+    archive.directory(getRerources(),getRerources());
     archive.finalize();
 }
 
@@ -65,7 +66,9 @@ function onRequestDone(err, res, body) {
 function getZipPath() {
     return path.resolve(process.cwd(), 'package.zip');
 }
-
+function getRerources() {
+    return require(path.resolve(locator.getCfg())).resources;
+}
 function getModule() {
     return require(path.resolve(locator.getCfg())).main;
 }
