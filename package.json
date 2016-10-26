@@ -1,7 +1,7 @@
 {
   "name": "ihpm",
   "description": "InHabit Package Manager",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "homepage": "https://github.com/ArkadiumInc/node-ihpm",
   "author": {
     "name": "ArkadiumInc",
