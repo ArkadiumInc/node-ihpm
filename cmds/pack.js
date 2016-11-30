@@ -19,7 +19,7 @@ module.exports = function(program) {
 
             try {
                 const cfg = require(locator.cfg());
-                const packageName = `${cfg.moduleId}.zip`;
+                const packageName = `package.zip`;
                 const packageFileStream = fs.createWriteStream(packageName);
                 const archive = archiver('zip');
 
@@ -35,10 +35,10 @@ module.exports = function(program) {
                     archive.file(cfg.preview);
                 }
                 if (cfg.main) {
-                    archive.file(cfg.main, { name: `${cfg.moduleId}.js` });
+                    archive.file(cfg.main, { name: `entry.js` });
                 }
 
-                cfg.main = `${cfg.moduleId}.js`;
+                cfg.main = `entry.js`;
                 archive.append(JSON.stringify(cfg), {name: 'inhabitcfg.json'});
 
                 archive.finalize();
