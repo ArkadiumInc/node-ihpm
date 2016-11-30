@@ -29,16 +29,17 @@ module.exports = function(program) {
                 archive.pipe(packageFileStream);
 
                 if (cfg.resources) {
-                    archive.directory(cfg.resources);
+                    archive.directory(cfg.resources, '/');
                 }
                 if (cfg.preview) {
                     archive.file(cfg.preview);
                 }
                 if (cfg.main) {
-                    archive.file(cfg.main);
+                    archive.file(cfg.main, { name: `${cfg.moduleId}.js` });
                 }
 
-                archive.file(path.basename(locator.cfg()));
+                cfg.main = `${cfg.moduleId}.js`;
+                archive.append(JSON.stringify(cfg), {name: 'inhabitcfg.json'});
 
                 archive.finalize();
 
