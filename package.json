@@ -21,9 +21,10 @@
   "license": "MIT",
   "bugs": "https://github.com/ArkadiumInc/node-ihpm/issues",
   "dependencies": {
+    "autocmdr": "~0.0.7",
     "commander": "~2.0.0",
-    "autocmdr": "~0.0.7"
+    "generator-inhabit-module-template": "0.0.27",
+    "yeoman-environment": "^1.6.6"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
