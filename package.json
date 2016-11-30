@@ -1,0 +1,29 @@
+{
+  "name": "ihpm",
+  "version": "2.0.0-alpha",
+  "description": "InHabit CLI",
+  "private": true,
+  "bin": {
+    "ihpm": "./bin/ihpm"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "author": {
+    "name": "rand0me",
+    "email": "not.randome@gmail.com",
+    "url": "https://github.com/rand0me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArkadiumInc/node-ihpm"
+  },
+  "license": "MIT",
+  "bugs": "https://github.com/ArkadiumInc/node-ihpm/issues",
+  "dependencies": {
+    "commander": "~2.0.0",
+    "autocmdr": "~0.0.7"
+  },
+  "devDependencies": {
+  }
+}

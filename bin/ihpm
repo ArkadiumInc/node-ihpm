@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+'use strict';
+
+var program  = require('commander');
+
+require('autocmdr/lib/logger')(program);
+require('autocmdr/lib/loader')(program);
+require('autocmdr/lib/help')(program);
+
+
+program
+	.version('2.0.0-alpha');
+
+
+
+program
+	.parse(process.argv);
+
+if (program.args.length < 1 ) {
+	console.log('No command specified. See \'ihpm --help\':');
+	program.outputHelp();
+	process.exit(1);
+}
