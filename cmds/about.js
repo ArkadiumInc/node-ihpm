@@ -10,7 +10,8 @@ module.exports = function(program) {
 		.version('0.0.0')
 		.description('About InHabit CLI')
 		.action(function (/* Args here */) {
-			console.log(`
+            const chalk = require('chalk');
+			console.log(chalk.cyan.bold(`
                  ___          ___          ___          ___                 ___     
       ___       /\\__\\        /\\__\\        /\\  \\        /\\  \\         ___   /\\  \\    
      /\\  \\     /::|  |      /:/  /       /::\\  \\      /::\\  \\       /\\  \\  \\:\\  \\   
@@ -22,7 +23,6 @@ module.exports = function(program) {
   \\:\\__\\        |::/  /       /:/  /       /:/  /    \\:\\/:/  /   \\:\\__\\  \\/__/      
    \\/__/        /:/  /       /:/  /       /:/  /      \\::/__/     \\/__/             
                 \\/__/        \\/__/        \\/__/        ~~                           
-            `);
+            `));
 		});
-
 };

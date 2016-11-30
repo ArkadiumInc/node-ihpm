@@ -9,8 +9,8 @@ module.exports = function(program) {
 		.command('init')
 		.version('0.0.0')
 		.description('Init a new Inhabit project')
-		.action(function (/* Args here */) {
-			// Your code goes here
+		.action(function () {
+            const chalk = require('chalk');
+            console.log(chalk.red('This feature is not ready yet. >_<'))
 		});
-
 };
