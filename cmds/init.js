@@ -6,11 +6,33 @@
 module.exports = function(program) {
 
 	program
-		.command('init')
-		.version('0.0.0')
+        .version('0.0.1')
+		.command('init <name>')
 		.description('Init a new Inhabit project')
-		.action(function () {
-            const chalk = require('chalk');
-            console.log(chalk.red('This feature is not ready yet. >_<'))
+		.action(function (name) {
+            const path      = require('path');
+            const chalk     = require('chalk');
+            const skeleton  = require('init-skeleton').init;
+            const animation = require('../lib/animation');
+
+            const logger   = { log: () => {}, error: () => {}}; // Suppress any messages
+            const rootPath = path.join(process.cwd(), name);
+
+            animation.start(chalk.green('Wait, while we do all the work for you...'));
+
+            skeleton('https://github.com/brunch/with-es6', {
+                logger,
+                rootPath
+            }, err => {
+                animation.end();
+                if (err) {
+                    console.log(chalk.red(err.message));
+                } else {
+                    console.log(chalk.green(`Check your fresh Module at ${chalk.bold(path.resolve(rootPath))}`))
+                    console.log(chalk.blue(`Next steps:`));
+                    console.log(chalk.blue.bold(`cd ${name}`));
+                    console.log(chalk.blue.bold(`npm start`));
+                }
+            });
 		});
 };

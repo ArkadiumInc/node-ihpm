@@ -23,7 +23,9 @@
     "archiver": "^1.2.0",
     "autocmdr": "~0.0.7",
     "chalk": "^1.1.3",
-    "commander": "~2.0.0"
+    "cli-frames": "^2.2.5",
+    "commander": "~2.0.0",
+    "init-skeleton": "^0.9.5"
   },
   "devDependencies": {}
 }

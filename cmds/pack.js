@@ -23,8 +23,9 @@ module.exports = function(program) {
                 const packageFileStream = fs.createWriteStream(packageName);
                 const archive = archiver('zip');
 
-                packageFileStream.on('close', () =>
-                    console.log(chalk.green(`${archive.pointer()} bytes written to ${path.resolve(packageName)}`)));
+                packageFileStream.on('close', () => {
+                    console.log(chalk.green(`${archive.pointer()} bytes written to ${path.resolve(packageName)}`));
+                });
 
                 archive.pipe(packageFileStream);
 
@@ -44,7 +45,7 @@ module.exports = function(program) {
                 archive.finalize();
 
             } catch (e) {
-                console.log(chalk.red(e.message));
+                console.error(e);
             }
 		});
 
