@@ -3,6 +3,8 @@
  */
 'use strict';
 
+const DEFAULT_SKEL = 'https://github.com/ArkadiumInc/brunch-inhabit-module-js';
+
 module.exports = function(program) {
 
 	program
@@ -20,7 +22,7 @@ module.exports = function(program) {
 
             animation.start(chalk.green('Wait, while we do all the work for you...'));
 
-            skeleton('https://github.com/brunch/with-es6', {
+            skeleton('', {
                 logger,
                 rootPath
             }, err => {
