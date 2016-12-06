@@ -22,7 +22,7 @@ module.exports = function(program) {
 
             animation.start(chalk.green('Wait, while we do all the work for you...'));
 
-            skeleton('', {
+            skeleton(DEFAULT_SKEL, {
                 logger,
                 rootPath
             }, err => {
