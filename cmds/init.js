@@ -3,15 +3,18 @@
  */
 'use strict';
 
-const DEFAULT_SKEL = 'https://github.com/ArkadiumInc/brunch-inhabit-module-js';
+const SKELS = {
+    js:     'https://github.com/ArkadiumInc/brunch-inhabit-module-js',
+    phaser: 'https://github.com/ArkadiumInc/brunch-inhabit-module-phaser'
+};
 
 module.exports = function(program) {
 
 	program
-        .version('0.0.1')
-		.command('init <name>')
+        .version('0.0.2')
+		.command('init <name> [skel]')
 		.description('Init a new Inhabit project')
-		.action(function (name) {
+		.action(function (name, skel) {
             const path      = require('path');
             const chalk     = require('chalk');
             const skeleton  = require('init-skeleton').init;
@@ -20,9 +23,13 @@ module.exports = function(program) {
             const logger   = { log: () => {}, error: () => {}}; // Suppress any messages
             const rootPath = path.join(process.cwd(), name);
 
+            if (!skel || !SKELS[skel]) {
+                skel = 'js';
+            }
+
             animation.start(chalk.green('Wait, while we do all the work for you...'));
 
-            skeleton(DEFAULT_SKEL, {
+            skeleton(SKELS[skel], {
                 logger,
                 rootPath
             }, err => {
@@ -36,5 +43,7 @@ module.exports = function(program) {
                     console.log(chalk.blue.bold(`npm start`));
                 }
             });
-		});
+		}).on('--help', function () {
+            console.log('Available skeletons: js, phaser');
+        });
 };
