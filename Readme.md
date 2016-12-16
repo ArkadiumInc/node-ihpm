@@ -2,9 +2,9 @@
 
 ## Description
 
-InHabit CLI
+InHabit CLI - scaffold new projects and prepare them for publishing
 
-## Usage
+## Installation
 
 To install ihpm from npm, run:
 
@@ -12,7 +12,23 @@ To install ihpm from npm, run:
 $ npm install -g ihpm
 ```
 
-```node ./bin/ihpm --help```
+## Usage
+To get a cli help, try running `node ihpm --help`
+
+### `ihpm init <name> [skel]`
+
+Scaffold a new InHabit module with given name and optionally skeleton. Example:
+```
+# This command creates new Node.js project 'my-interactive' using 'js' skeleton
+ihpm init my-interactive
+
+# This creates same, but with Phaser onboard
+ihpm init my-interactive phaser
+```
+Currently available skeletons are: [js](https://github.com/ArkadiumInc/brunch-inhabit-module-js) (Default), [phaser](https://github.com/ArkadiumInc/brunch-inhabit-module-phaser)
+
+### `ihpm pack`
+Creates a `package.zip` using your `inhabitcfg.json` file.
 
 ## License
 
