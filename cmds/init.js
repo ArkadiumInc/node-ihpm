@@ -21,7 +21,7 @@ let generateFromYo = function (generatorType) {
 };
 module.exports = function (program) {
     program
-        .version('0.0.2')
+        .version('0.0.3')
         .command('init [type]')
         .description('Init a new Inhabit project;Available types: classic, brunch-js, brunch-phaser')
         .action(generateFromYo).on('--help', function () {

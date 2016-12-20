@@ -1,6 +1,6 @@
 {
   "name": "ihpm",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "InHabit CLI",
   "bin": {
     "ihpm": "./bin/ihpm"
