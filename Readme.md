@@ -1,6 +1,5 @@
 #ihpm
-[![npm][npm-badge]][npm-badge-url]
-[![Join the chat at https://gitter.im/inhabit-arkadium/ihpm](https://badges.gitter.im/inhabit-arkadium/ihpm.svg)](https://gitter.im/inhabit-arkadium/ihpm?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![npm version](https://badge.fury.io/js/ihpm.svg)](https://badge.fury.io/js/ihpm)[![Join the chat at https://gitter.im/inhabit-arkadium/ihpm](https://badges.gitter.im/inhabit-arkadium/ihpm.svg)](https://gitter.im/inhabit-arkadium/ihpm?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ## Note
 Event though this project still in progress, there many things that you able to do with it.
 
