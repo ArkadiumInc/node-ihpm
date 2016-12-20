@@ -26,7 +26,7 @@
     "cli-frames": "^2.2.5",
     "commander": "~2.0.0",
     "generator-inhabit-brunch-js": "0.0.1",
-    "generator-inhabit-brunch-phaser": "0.0.3",
+    "generator-inhabit-brunch-phaser": "0.0.4",
     "generator-inhabit-module-template": "0.0.27",
     "init-skeleton": "^0.9.5",
     "yeoman-environment": "^1.6.6"
