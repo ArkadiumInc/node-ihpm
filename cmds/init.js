@@ -5,8 +5,8 @@
 
 const Generators = {
     classic:"inhabit-module-template",
-    js: 'https://github.com/ArkadiumInc/brunch-inhabit-module-js',
-    phaser: 'https://github.com/ArkadiumInc/brunch-inhabit-module-phaser'
+    "brunch-js": 'inhabit-brunch-js',
+    "brunch-phaser": 'inhabit-brunch-phaser'
 };
 
 let generateFromYo = function (generatorType) {
@@ -23,8 +23,8 @@ module.exports = function (program) {
     program
         .version('0.0.2')
         .command('init [type]')
-        .description('Init a new Inhabit project')
+        .description('Init a new Inhabit project;Available types: classic, brunch-js, brunch-phaser')
         .action(generateFromYo).on('--help', function () {
-        console.log('Available types: classic, js, phaser');
+        console.log('Available types: classic, brunch-js, brunch-phaser');
     });
 };
