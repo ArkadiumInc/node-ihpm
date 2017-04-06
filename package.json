@@ -1,6 +1,6 @@
 {
   "name": "ihpm",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "description": "InHabit CLI",
   "bin": {
     "ihpm": "./bin/ihpm"
@@ -27,7 +27,7 @@
     "commander": "~2.0.0",
     "generator-inhabit-brunch-js": "0.0.2",
     "generator-inhabit-brunch-phaser": "0.0.6",
-    "generator-inhabit-module-template": "0.0.27",
+    "generator-inhabit-module-template": "0.0.5",
     "init-skeleton": "^0.9.5",
     "yeoman-environment": "^1.6.6"
   },
