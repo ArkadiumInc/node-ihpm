@@ -31,5 +31,12 @@
     "init-skeleton": "^0.9.5",
     "yeoman-environment": "^1.6.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

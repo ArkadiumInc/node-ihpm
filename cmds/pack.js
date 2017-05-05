@@ -38,6 +38,11 @@ module.exports = function(program) {
                 if (cfg.main) {
                     archive.file(cfg.main, { name: `entry.js` });
                 }
+                try {
+                    fs.accessSync(`${cfg.main}.map`);
+                    archive.file(`${cfg.main}.map`, { name: `entry.js.map` });
+                    console.log(chalk.blue(`Found sourcemap: ${cfg.main}.map`));
+                } catch(e) { }
 
                 cfg.main = `entry.js`;
                 archive.append(JSON.stringify(cfg), {name: 'inhabitcfg.json'});
